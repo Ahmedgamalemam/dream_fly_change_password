@@ -4,13 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Flight Fusion</title>
+    <title>Dream&Fly</title>
 
     <style>
       body {
         font-family: Nunito !important;
-        font-weight: 600 !important;
         overflow-x: hidden;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      main {
+        background: #ffffff;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        height: 90%;
+        border-radius: 20px;
+        padding: 14px 28px;
+      }
+      section {
+        width: 50%;
+      }
+
+      .background-logo {
+        width: 50%;
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      form {
+        width: 100%;
       }
 
       button {
@@ -18,30 +52,7 @@
         font-family: Urbanist !important;
       }
 
-      .back-color-EDF7FF {
-        background-color: #ede9f2 !important;
-      }
-      .back-color-light {
-        background: white !important;
-      }
-
-      .color-blue-dark {
-        color: #4c247b !important;
-      }
-      .back-blue-middle {
-        background: #068fd3 !important;
-      }
-      .color-white {
-        color: white !important;
-      }
-
-      .p-relative {
-        position: relative;
-      }
-
-      input[type="email"],
-      input[type="text"],
-      input[type="password"] {
+      input {
         width: 100%;
         height: 52px;
         padding: 0.5rem;
@@ -49,17 +60,10 @@
         border-radius: 8px;
         background: #ede9f2;
         margin-bottom: 1.5rem;
-      }
-      input[type="text"]:focus,
-      input[type="email"]:focus,
-      input[type="password"]:focus {
-        border: none;
         outline: none;
       }
-      input[type="text"]::placeholder,
-      input[type="email"]::placeholder,
-      input[type="password"]::placeholder {
-        opacity: 0;
+      input::placeholder {
+        color: #cacaca;
       }
       /* /////////////////////////////////fonts//////////////////////////////////////////// */
 
@@ -81,40 +85,6 @@
         margin: 0 !important;
       }
 
-      .main-login {
-        height: 100vh;
-        padding: 0rem 9% 0;
-        gap: 3.5rem;
-        background-color: #edf7ff !important;
-      }
-
-      .main-login > section {
-        min-width: 48.5% !important;
-      }
-
-      section:has(form) {
-        width: 32%;
-        padding: 2rem 1.5rem;
-      }
-      section:has(form) > img {
-        width: 11.6rem;
-        height: 7rem;
-      }
-      section:has(form) > div {
-        text-align: center;
-        h3 {
-          font-size: clamp(1rem, 1.5rem, 2rem);
-          font-weight: 700;
-          line-height: normal;
-        }
-
-        p {
-          color: #4b5059;
-          font-size: 1vw;
-          font-weight: 400;
-        }
-      }
-
       .heading,
       .intro {
         display: none;
@@ -129,14 +99,13 @@
         text-align: start;
       }
 
-      .attrEntry > label {
-        font-weight: 400;
-        margin-bottom: 0.3rem;
-      }
-
       .helpLink,
       #cancel {
         display: none;
+      }
+
+      .buttons button[aria-disabled="true"] {
+        opacity: 0.3;
       }
 
       #continue {
@@ -149,40 +118,9 @@
         color: white;
       }
 
-      /* .simplemodal-overlay {
-        height: fit-content !important;
-      } */
-      .simplemodal-container {
-        height: fit-content !important;
-        background-color: white !important;
-        border-radius: 0.5rem !important;
-        padding: 0.5rem !important;
-      }
-
       .error.itemLevel,
       .error {
-        color: #eb001b !important;
-      }
-
-      .error {
-        p {
-          color: rgb(211, 3, 3);
-        }
-      }
-
-      #emailVerificationControl_error_message {
-        color: rgb(211, 3, 3);
-      }
-
-      @media (max-width: 840px) {
-        .main-login {
-          padding: 0rem 5% 0 !important;
-        }
-
-        .main-login > section {
-          min-width: 100% !important
-          ;
-        }
+        color: red !important;
       }
     </style>
 
@@ -195,55 +133,29 @@
   </head>
 
   <body>
-    <main class="main-login d-flex align-items-center">
-      <section
-        class="d-flex flex-column align-items-center back-color-light rounded-3 m-auto"
-      >
-        <img
-          class="mb-3"
-          src="https://ahmedgamalemam.github.io/b2c-login-page/images/AgencyLogo.png"
-          alt="logo"
-        />
+    <main>
+      <section>
+        <h3 class="head-title" style="font-weight: 600">
+          Get Started with Dream & Fly
+        </h3>
+        <p class="title" style="color: #242456">Confirm your new password</p>
 
-        <div>
-          <h3 class="color-blue-dark">Your New Password</h3>
-          <p style="color: #4b5059; font-size: 1rem">
-            Add new password information
-          </p>
-        </div>
-
-        <form id="api" class="w-100" method="post" autocomplete="off">
+        <form id="api" method="post" autocomplete="off">
           <input
-            id="newPassword"
-            type="password"
-            placeholder="New password"
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Email Address"
             required
           />
-          <input
-            id="reenterPassword"
-            type="password"
-            placeholder="Repeat password"
-            required
-          />
-          <button type="submit">Change Password</button>
         </form>
       </section>
+      <div class="background-logo">
+        <img
+          src="https://ahmedgamalemam.github.io/dream_fly_change_password/images/light-bg.png"
+          alt="logo"
+        />
+      </div>
     </main>
-
-    <!-- scripts -->
-
-    <script src="https://alcdn.msauth.net/lib/1.0.0/js/msal.js"></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("api").addEventListener("submit", function (e) {
-          e.preventDefault();
-          const newPassword = document.getElementById("newPassword").value;
-          const reenterPassword =
-            document.getElementById("reenterPassword").value;
-          Login.submit({ newPassword, reenterPassword });
-        });
-      });
-    </script>
   </body>
 </html>
