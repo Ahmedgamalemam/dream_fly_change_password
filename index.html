@@ -57,7 +57,7 @@
         padding: 10px;
         border-radius: 8px;
         border: 1px solid #eaeaea !important;
-        margin-bottom: 1rem;
+        margin-bottom: 1rem !important;
         outline: none;
       }
       input::placeholder {
@@ -112,13 +112,33 @@
         color: white;
       }
 
-      label {
+      label,
+      #verifying_blurb {
         display: none !important;
       }
 
       .error.itemLevel,
       .error {
         color: red !important;
+      }
+
+      @media (max-width: 840px) {
+        section {
+          width: 100%;
+        }
+        .background-logo {
+          display: none;
+        }
+      }
+
+      @media (max-width: 470px) {
+        .head-title {
+          font-size: 20px;
+        }
+
+        .title p {
+          font-size: 12px;
+        }
       }
     </style>
 
